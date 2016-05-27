@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.2.xsd
+			http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+			http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.1.xsd
+			http://www.springframework.org/schema/data/mongo  http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
+
+	<!-- SPRING SETUP -->
+
+	<!-- Load properties so we can easily change them -->
+	<context:property-placeholder
+		location="classpath:application.properties, 
+		          classpath:mongo.properties" />
+
+	<!-- Enable Annotation Configuration in order to automatically scan controllers -->
+	<context:annotation-config />
+
+	<!-- Allow @Transactional annotations for transaction management -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- Search for Rest Resources and configure them automatically -->
+	<context:component-scan
+		base-package="com.daksu.security.filter.resources" />
+		
+	<context:component-scan	base-package="com.daksu" />
+		
+	<mongo:repositories base-package="com.daksu"/>
+
+	<!-- DATABASE SETUP -->
+
+	<mongo:mongo host="${mongo.host}" port="${mongo.port}">
+		<mongo:options connections-per-host="${mongo.connectionsPerHost}"
+			threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
+			connect-timeout="${mongo.connectTimeout}" max-wait-time="${mongo.maxWaitTime}"
+			auto-connect-retry="${mongo.autoConnectRetry}" socket-keep-alive="${mongo.socketKeepAlive}"
+			socket-timeout="${mongo.socketTimeout}" slave-ok="${mongo.slaveOk}"
+			write-number="1" write-timeout="0" write-fsync="true" />
+	</mongo:mongo>
+	
+	<mongo:db-factory dbname="daksu" mongo-ref="mongo" id="mongoDbFactory" />
+	
+	<!-- Used only for provisioning purposes -->
+	<bean id="daksuMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+  		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+	</bean>
+	
+	<bean id="mongoTemplateFactory" class="com.daksu.connection.CompanySpecificMongoTemplateFactory">
+  		<constructor-arg ref="mongo"/>
+  		<constructor-arg ref="mongoDbFactory"/>
+	</bean>
+	
+	<bean id="mongoTemplate" factory-bean="mongoTemplateFactory" factory-method="createMongoTemplate" scope="prototype"/>
+	
+
+	<bean id="companyRepository" class="com.daksu.provisioner.repository.CompanyRepository">
+	</bean>
+	
+	<bean id="provisioningService" class="com.daksu.provisioner.service.impl.ProvisioningServiceImpl">
+	</bean>
+	
+	<bean id="userRepository" class="com.daksu.user.repositoty.UserRepository">
+	</bean>
+	
+	<bean id="userService" class="com.daksu.user.service.impl.UserServiceImpl">
+	</bean>
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+	</bean>
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceUnitName" value="examplePU" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="generateDdl" value="true" />
+				<property name="showSql" value="true" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="newsEntryDao"
+		class="com.daksu.dao.newsentry.JpaNewsEntryDao">
+	</bean>
+
+	<bean id="userDao"
+		class="com.daksu.dao.user.JpaUserDao">
+	</bean>
+
+	<!-- <bean id="dataBaseInitializer"
+		class="com.daksu.dao.DataBaseInitializer"
+		init-method="initDataBase">
+		<constructor-arg ref="userDao" />
+		<constructor-arg ref="newsEntryDao" />
+		<constructor-arg ref="passwordEncoder" />
+	</bean> -->
+	
+	
+
+	<!-- INIT REST COMPONENTS -->
+
+	<bean id="objectMapper" class="org.codehaus.jackson.map.ObjectMapper" />
+
+	<!-- SPRING SECURITY SETUP -->
+
+	<bean id="passwordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+		<!-- <constructor-arg value="${app.secret}" /> -->
+	</bean>
+	
+	<bean id="daksuAuthenticationProvider" class="com.daksu.security.filter.DaksuAuthenticationProvider">
+		<constructor-arg ref="userRepository" />
+		<constructor-arg ref="companyRepository" />
+		<constructor-arg ref="passwordEncoder" />
+	</bean>
+
+	<security:authentication-manager id="authenticationManager">
+		<security:authentication-provider ref="daksuAuthenticationProvider" />
+	</security:authentication-manager>
+
+	<security:http entry-point-ref="unauthorizedEntryPoint"
+		authentication-manager-ref="authenticationManager" create-session="stateless">
+		<security:csrf disabled="true" />
+		<security:custom-filter ref="authenticationTokenProcessingFilter"
+			position="PRE_AUTH_FILTER" />
+		<security:intercept-url pattern="/rest/user/authenticate"
+			access="permitAll" />
+		<security:intercept-url method="GET" pattern="/rest/news/**"
+			access="hasRole('USER')" />
+		<security:intercept-url method="PUT" pattern="/rest/news/**"
+			access="hasRole('ADMIN')" />
+		<security:intercept-url method="POST" pattern="/rest/news/**"
+			access="hasRole('ADMIN')" />
+		<security:intercept-url method="DELETE"
+			pattern="/rest/news/**" access="hasRole('ADMIN')" />
+	</security:http>
+
+	<bean id="unauthorizedEntryPoint"
+		class="com.daksu.security.filter.UnauthorizedEntryPoint" />
+
+	<bean id="authenticationTokenProcessingFilter"
+		class="com.daksu.security.filter.AuthenticationTokenProcessingFilter">
+		<constructor-arg ref="userRepository" />
+	</bean>
+
+</beans>

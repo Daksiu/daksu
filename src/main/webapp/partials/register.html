@@ -1,0 +1,55 @@
+<div class="page-header">
+	<h2>Registration</h2>
+</div>
+
+<div class="row">
+
+	<div class="col-md-6">
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label for="username" class="col-sm-3 control-label">Company Name:</label>
+				<div class="col-sm-9">
+					<input id="companyName" ng-model="company.companyName" type="text" class="form-control" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="username" class="col-sm-3 control-label">Company ID:</label>
+				<div class="col-sm-9">
+					<input id="companyId" ng-model="company.companyId" type="text" class="form-control" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="username" class="col-sm-3 control-label">Account Type:</label>
+				<div class="col-sm-9">
+					<select class="selectpicker dropup" ng-model="company.companyType" ng-options="item for item in companyTypes"></select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="username" class="col-sm-3 control-label">User Email:</label>
+				<div class="col-sm-9">
+					<input id="email" ng-model="company.email" type="text" class="form-control" />
+				</div>
+			</div>
+			
+			
+			<div class="form-group">
+				<label for="password" class="col-sm-3 control-label">Password:</label>
+				<div class="col-sm-9">
+					<input id="password" ng-model="company.password" type="password" class="form-control" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-9 col-sm-offset-3">
+					<input type="submit" value="Register" class="btn btn-primary" ng-click="save()"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	
+
+</div>
