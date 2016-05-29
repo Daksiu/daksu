@@ -1,55 +1,65 @@
-<div class="page-header">
-	<h2>Registration</h2>
-</div>
+<div class="container">
+  <div class="dev-page-login-block">
+    <div class="registration-form">
+      <div class="text-center">
+        <img class="logo" src="img/logo.svg">
+        <h3>Create a free account today!</h3>
+        <p>No comission fees, cancel at any time</p>
+        <br>
+        <br>
+      </div>
+      <form class="login-form" method="post" name="register-form">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Company Name" id="companyName" ng-model="company.companyName">
+            </div>
+          </div>
+        </div>
 
-<div class="row">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <div class="input-group">
+              <input type="text" class="form-control" id="companyId" ng-model="company.companyId" placeholder="Custom url">
+              <div class="input-group-addon">.daksu.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-	<div class="col-md-6">
-		<form class="form-horizontal">
-			<div class="form-group">
-				<label for="username" class="col-sm-3 control-label">Company Name:</label>
-				<div class="col-sm-9">
-					<input id="companyName" ng-model="company.companyName" type="text" class="form-control" />
-				</div>
-			</div>
-			
-			<div class="form-group">
-				<label for="username" class="col-sm-3 control-label">Company ID:</label>
-				<div class="col-sm-9">
-					<input id="companyId" ng-model="company.companyId" type="text" class="form-control" />
-				</div>
-			</div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="username" class="col-sm-3 control-label">I'm a:</label>
+              <div class="col-sm-9">
+                <select class="selectpicker dropup" ng-model="company.companyType" ng-options="item for item in companyTypes"></select>
+              </div>
+            </div>
+          </div>
+        </div>
 
-			<div class="form-group">
-				<label for="username" class="col-sm-3 control-label">Account Type:</label>
-				<div class="col-sm-9">
-					<select class="selectpicker dropup" ng-model="company.companyType" ng-options="item for item in companyTypes"></select>
-				</div>
-			</div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Email" id="email" ng-model="company.email" >
+            </div>
+          </div>
+        </div>
 
-			<div class="form-group">
-				<label for="username" class="col-sm-3 control-label">User Email:</label>
-				<div class="col-sm-9">
-					<input id="email" ng-model="company.email" type="text" class="form-control" />
-				</div>
-			</div>
-			
-			
-			<div class="form-group">
-				<label for="password" class="col-sm-3 control-label">Password:</label>
-				<div class="col-sm-9">
-					<input id="password" ng-model="company.password" type="password" class="form-control" />
-				</div>
-			</div>
-			
-			<div class="form-group">
-				<div class="col-sm-9 col-sm-offset-3">
-					<input type="submit" value="Register" class="btn btn-primary" ng-click="save()"/>
-				</div>
-			</div>
-		</form>
-	</div>
-	
-	
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Password" id="password" ng-model="company.password">
+            </div>
+          </div>
+        </div>
 
+        <div class="form-group no-border">
+          <button type="submit" value="Register" class="btn btn-primary btn-block" ng-click="save()">Sign-up</button>
+        </div>
+      </form>                    
+    </div>
+    <div class="text-center looking-4-login"><a href="#!/login">Want the login page?</a></div>
+  </div>
 </div>
