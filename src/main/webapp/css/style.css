@@ -3374,8 +3374,8 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .m-uneditable-input:focus {
-  border-color: #f1f1f1;
-  background-color: #f4f5f7;
+  border-color: #5ce4c9;
+  background-color: white;
   outline: 0 !important;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -6316,6 +6316,9 @@ h4.custom-line-height {
 .btn-social {
   font-size: 20px;
   margin: 10px;
+}
+.btn-login{
+  width: 53%;
 }
 .btn-social:hover,
 .btn-social:focus,
