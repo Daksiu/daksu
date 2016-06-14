@@ -349,6 +349,8 @@ body.boxed-layout .footer-widget {
 }
 .header a {
   text-decoration: none;
+  padding: 4px 0px;
+  color: black;
 }
 .header .chat-toggler {
   position: relative;
@@ -380,6 +382,7 @@ body.boxed-layout .footer-widget {
 }
 .header .chat-toggler .profile-pic {
   border-radius: 100px 100px 100px 100px;
+  margin-left:14px;
   display: inline-block;
   height: 35px;
   overflow: hidden;
@@ -445,7 +448,7 @@ body.boxed-layout .footer-widget {
   border-radius: 3px;
 }
 .header .quick-section {
-  margin-left: 20px;
+  margin-left: 0;
   margin-top: 16px;
   margin-right: 10px;
   display: inline-block;
@@ -2139,6 +2142,15 @@ blockquote.pull-right small:after {
   margin: 18px 0;
   height: 1.8em;
 }
+.app-logo{
+  background-position: 4px;
+  background-repeat: no-repeat;
+  background-image: url(../img/logo.svg);
+  height: 30px;
+  width: 30px;
+  background-size: 9em;
+  margin-left: 30px;
+}
 .login{
   margin-top: 0;
 }
@@ -2395,6 +2407,7 @@ span.iconset {
 }
 .iconset.top-settings-dark {
   background-position: -176px -6px;
+  margin-right: 6px;
   width: 17px;
   height: 16px;
 }
@@ -3073,6 +3086,9 @@ span.iconset {
 }
 .toggle-button span.labelRight {
   background-color: #eee;
+}
+.initial{
+  margin-top: 7em;
 }
 .dataTable {
   clear: both;

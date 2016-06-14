@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="daksuApp">
 <head>
-	<title>We're buldidng Daksu</title>
+	<title>We're creating Daksu</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	
@@ -10,8 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<style type="text/css">
 	.ng-hide {
 		display: none;
@@ -28,42 +29,62 @@
 	<nav class="navbar navbar-fixed-top navbar-default ng-hide" role="navigation" ng-show="initialized">
 		<div class="container">
 			<div ng-show="user">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span> 
-						<span class="icon-bar"></span> 
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Daksu</a>
-				</div>
-	
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li><a href="#!/">Home</a></li>
-					</ul>
-					
-					
-					
-					<ul class="nav navbar-nav">
-						<li><a href="#!/upload">Upload</a></li>
-					</ul>
-					
-					<ul class="nav navbar-nav">
-						<li><a href="#!/product">Products</a></li>
-					</ul>
-					
-					
-					<ul class="nav navbar-nav navbar-right">
-						
-						<li class="dropdown" >
-							<a href="" class="dropdown-toggle" data-toggle="dropdown">{{user.name}} <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="" ng-click="logout()"><span class="fa fa-sign-out"></span> Logout</a></li>
-							</ul>
-						</li>
-					</ul>
+				<!-- BEGIN TOP NAVIGATION BAR -->
+				<div class="header navbar navbar-inverse "> 
+  				<!-- BEGIN TOP NAVIGATION BAR -->
+				  	<div class="navbar-inner">
+					    <div class="header-quick-nav" > 
+
+					    	<!-- BEGIN TOP NAVIGATION MENU -->
+							<div class="pull-left"> 
+						        <ul class="nav quick-section">
+						        	<li>
+						        		<div class="app-logo">
+						        		</div>
+						        	</li>
+									<li><a href="#!/">Home</a></li>
+									<li><a href="#!/upload">Upload</a></li>
+									<li><a href="#!/product">Products</a></li>
+							  	</ul>
+					    	</div>
+					 		<!-- END TOP NAVIGATION MENU -->
+
+					 		<!-- BEGIN CHAT TOGGLER -->
+				     		<div class="pull-right"> 
+								<div class="chat-toggler">	
+									<a href="#" class="dropdown-toggle" id="my-task-list" data-placement="bottom"  data-content='' data-toggle="dropdown" data-original-title="Notifications">
+										<div class="user-details">
+											<div class="username"> 
+												{{user.name}}								
+											</div>						
+										</div> 
+									  	<div class="profile-pic"> 
+				          					<img src="img/avatar_small.jpg"  alt="" data-src="img/avatar_small.jpg" data-src-retina="img/avatar_small2x.jpg" width="35" height="35" /> 
+				        				</div> 
+									</a>				
+								</div>
+						 		<ul class="nav quick-section ">
+									<li class="quicklinks"> 
+										<a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
+											<div class="iconset top-settings-dark "></div> 	
+										</a>
+										<ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
+				                  	<li>
+				                  		<a href="#"> My Account</a>
+				                  	</li>
+				                  	<li class="divider"></li>                
+				                  	<li>
+				                  		<a href="" ng-click="logout()"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Log out</a>
+				                  	</li>
+				               	</ul>
+									</li> 
+								</ul>
+				      	</div>
+					   <!-- END CHAT TOGGLER -->
+				      </div> 
+				      <!-- END TOP NAVIGATION MENU --> 
+				  	</div>
+				  <!-- END TOP NAVIGATION BAR --> 
 				</div>
 			</div>
 		</div>
