@@ -1,4 +1,4 @@
-angular.module('exampleApp', ['ngRoute', 'ngCookies', 'exampleApp.services'])
+angular.module('daksuApp', ['ngRoute', 'ngCookies', 'daksuApp.services', 'daksuApp.upload'])
 	.config(
 		[ '$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
 			
@@ -20,6 +20,16 @@ angular.module('exampleApp', ['ngRoute', 'ngCookies', 'exampleApp.services'])
 			$routeProvider.when('/login', {
 				templateUrl: 'partials/login.html',
 				controller: LoginController
+			});
+			
+			$routeProvider.when('/upload', {
+				templateUrl: 'partials/upload.html',
+				controller: UploadController
+			});
+			
+			$routeProvider.when('/product', {
+				templateUrl: 'partials/product.html',
+				controller: ProductController
 			});
 			
 			$routeProvider.otherwise({
@@ -59,7 +69,7 @@ angular.module('exampleApp', ['ngRoute', 'ngCookies', 'exampleApp.services'])
 		        		var isRestCall = config.url.indexOf('rest') == 0;
 		        		if (isRestCall && angular.isDefined($rootScope.authToken)) {
 		        			var authToken = $rootScope.authToken;
-		        			if (exampleAppConfig.useAuthTokenHeader) {
+		        			if (daksuAppConfig.useAuthTokenHeader) {
 		        				config.headers['X-Auth-Token'] = authToken;
 		        			} else {
 		        				config.url = config.url + "?token=" + authToken;
@@ -141,6 +151,19 @@ function EditController($scope, $routeParams, $location, NewsService) {
 	};
 };
 
+
+function UploadController($scope, FileUpload){
+    
+    $scope.uploadFile = function(){
+        var file = $scope.myFile;
+        console.log('file is ' );
+        console.dir(file);
+        var uploadUrl = "rest/upload";
+        FileUpload.uploadFileToUrl(file, uploadUrl);
+        
+    };
+};
+
 function RegistrationController($scope, $rootScope, $routeParams, $cookieStore, $location, RegistrationService, UserService) {
 
 	$scope.companyTypes = ["SUPPLIER","RETAILER"];
@@ -197,8 +220,14 @@ function LoginController($scope, $rootScope, $location, $cookieStore, UserServic
 	};
 };
 
+function ProductController($scope, ProductService) {
+	
+	$scope.products = ProductService.query();
+	
+	
+};
 
-var services = angular.module('exampleApp.services', ['ngResource']);
+var services = angular.module('daksuApp.services', ['ngResource']);
 
 services.factory('UserService', function($resource) {
 	
@@ -224,3 +253,24 @@ services.factory('RegistrationService', function($resource) {
 services.factory('CompanyService', function($resource) {	
 	return $resource('rest/company/:id', {id: '@id'});
 });
+
+services.factory('ProductService', function($resource) {
+	
+	return $resource('rest/product/:id', {id: '@id'});
+});
+
+services.service('FileUpload', ['$http', function ($http) {
+    this.uploadFileToUrl = function(file, uploadUrl){
+        var fd = new FormData();
+        fd.append('file', file);
+        $http.post(uploadUrl, fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+        .success(function(){
+        })
+        .error(function(){
+        });
+    }
+}]);
+

@@ -22,8 +22,8 @@ public class CompanyRepository {
 
 	
 	public void addCompany(Company company) {
-		if (!daksuMongoTemplate.collectionExists(Company.class)) {
-			daksuMongoTemplate.createCollection(Company.class);
+		if (!daksuMongoTemplate.collectionExists( Company.COLLECTION_NAME)) {
+			daksuMongoTemplate.createCollection(Company.COLLECTION_NAME);
 		}		
 		daksuMongoTemplate.insert(company, Company.COLLECTION_NAME);
 	}
