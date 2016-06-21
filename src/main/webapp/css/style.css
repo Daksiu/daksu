@@ -190,7 +190,7 @@ body.boxed-layout .footer-widget {
   position: relative;
 }
 .header-seperation {
-  background-color: #22262e;
+  background-color:white;
 }
 .header {
   -webkit-transition: -webkit-transform 0.3s ease, left 0.3s ease, right 0.3s ease;
@@ -366,7 +366,7 @@ body.boxed-layout .footer-widget {
 .header .chat-toggler .user-details {
   display: inline-block;
   float: left;
-  line-height: 35px;
+  line-height: 14px;
 }
 .header .chat-toggler .user-details .username a {
   color: #1b1e24;
