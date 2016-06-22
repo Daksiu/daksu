@@ -1356,13 +1356,13 @@ body.boxed-layout .footer-widget {
   margin-left: 10px;
 }
 .page-content .breadcrumb li p {
-  font-size: 12.5px !important;
+  font-size: 10px !important;
   font-weight: 400;
-  color: #7b7d82;
+  color: #aeb0b3;
 }
 .page-content .breadcrumb li .active {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 10px;
 }
 .page-content .content {
   padding-left: 26px;
@@ -2346,13 +2346,15 @@ hr {
 .page-content .breadcrumb i,
 .page-content .breadcrumb span,
 .page-content .breadcrumb li {
-  color: #515050;
+  margin-left: 4px;
+  padding-left: 0px;
+  color: #6a7883;
   font-weight: 300;
   text-shadow: none;
 }
 .breadcrumb > li + li:before {
   padding: 0 5px;
-  color: #515050;
+  color:#6a7883;
   font-family: FontAwesome;
   content: "\f105";
 }
