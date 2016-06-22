@@ -295,7 +295,7 @@ body.boxed-layout .footer-widget {
   color: #656565 !important;
 }
 .header .nav > li.quicklinks > a {
-  padding: 4px 2px !important;
+  padding: 8px 2px !important;
 }
 .header .nav .h-seperate {
   height: 6px;
@@ -352,7 +352,7 @@ body.boxed-layout .footer-widget {
 }
 .header a {
   text-decoration: none;
-  padding: 4px 0px;
+  padding: 6px 0px;
   color: black;
 }
 .header .chat-toggler {
@@ -361,12 +361,12 @@ body.boxed-layout .footer-widget {
   margin-right: 5px;
   display: inline-block;
   float: left;
-  min-width: 163px;
 }
 .header .chat-toggler .user-details {
   display: inline-block;
   float: left;
   line-height: 14px;
+  text-align: right;
 }
 .header .chat-toggler .user-details .username a {
   color: #1b1e24;
@@ -385,7 +385,7 @@ body.boxed-layout .footer-widget {
 }
 .header .chat-toggler .profile-pic {
   border-radius: 100px 100px 100px 100px;
-  margin-left:14px;
+  margin-left:0;
   display: inline-block;
   height: 35px;
   overflow: hidden;
@@ -571,7 +571,7 @@ body.boxed-layout .footer-widget {
   border-bottom: 1px solid transparent !important;
 }
 .page-sidebar .page-sidebar-wrapper > ul > li a i {
-  color: #8b91a0;
+  color: #bec3d0;
   width: 20px;
   text-align: center;
   display: inline-block;
@@ -586,7 +586,7 @@ body.boxed-layout .footer-widget {
 }
 .page-sidebar .page-sidebar-wrapper > ul > li.active > a {
   border-top-color: transparent !important;
-  color: #50d8bc;
+  color: black;
   border: none;
   text-shadow: none;
 }
@@ -696,7 +696,7 @@ body.boxed-layout .footer-widget {
 .page-sidebar.mini {
   width: 50px;
   overflow: visible !important;
-  background-color: #0aa699 !important;
+  background-color: #ffffff !important;
   height: 100%;
   margin-top: 0;
   position: fixed;
@@ -719,7 +719,7 @@ body.boxed-layout .footer-widget {
   color: #ffffff;
 }
 .page-sidebar.mini .page-sidebar-wrapper > ul > li a i {
-  color: #ffffff;
+  color: #bec3d0;
 }
 .page-sidebar.mini .page-sidebar-wrapper > p {
   display: none;
@@ -758,8 +758,8 @@ body.boxed-layout .footer-widget {
   display: inline-block;
 }
 .badge-counter {
-  color: #c6cacd;
-  background-color: transparent;
+  color: #c6cacd !important;
+  background-color: transparent !important;
 }
 .page-sidebar.mini .profile-wrapper {
   display: none;
@@ -811,24 +811,19 @@ body.boxed-layout .footer-widget {
 .page-sidebar .page-sidebar-wrapper > ul > li.open > a,
 .page-sidebar .page-sidebar-wrapper > ul > li > a:hover,
 .page-sidebar .page-sidebar-wrapper > ul > li:hover > a {
-  background: #1b1e24;
-  color: #ffffff;
+  background: transparent;
+  color:black;
 }
 .page-sidebar.mini .page-sidebar-wrapper > ul > li a > .label {
   display: none;
 }
-.page-sidebar.mini .page-sidebar-wrapper > ul > li.open > a,
 .page-sidebar.mini .page-sidebar-wrapper > ul > li > a:hover,
 .page-sidebar.mini .page-sidebar-wrapper > ul > li:hover > a {
-  background: #0b9c8f;
-}
-.page-sidebar.mini .page-sidebar-wrapper > ul > li > a:hover,
-.page-sidebar.mini .page-sidebar-wrapper > ul > li:hover > a {
-  background: #0b9c8f;
+  background: white;
 }
 .page-sidebar.mini .page-sidebar-wrapper > ul > li.active > a i,
 .page-sidebar .page-sidebar-wrapper > ul > li:hover > a i {
-  color: #ffffff !important;
+  color:#50d8bc !important;
 }
 .page-sidebar .page-sidebar-wrapper ul > li > a > .arrow:before,
 .page-sidebar .page-sidebar-wrapper > ul > li > a > .arrow.open:before {
@@ -872,7 +867,7 @@ body.boxed-layout .footer-widget {
 }
 .navbar .pull-right > li.open > .dropdown-menu,
 .navbar .nav > li.open > .dropdown-menu.pull-right {
-  margin-right: -6px;
+  margin-right: -10px;
   margin-top: 7px;
 }
 .pace .pace-activity {
@@ -1300,7 +1295,7 @@ body.boxed-layout .footer-widget {
 .page-content {
   margin-top: 0px;
   padding: 0px;
-  background-color: #e5e9ec;
+  background-color: #F1F4F9;
   overflow: auto;
   position: relative;
   min-height: 100%;
@@ -2456,6 +2451,7 @@ span.iconset {
   background-position: -288px -7px;
   width: 18px;
   height: 15px;
+  margin-left: 14px;
 }
 .iconset.top-menu-toggle-white {
   background-position: -315px -7px;
@@ -4446,7 +4442,7 @@ form legend,
   color: #ffffff;
 }
 .input-focus {
-  background-color: #f4f5f7 !important;
+  background-color: transparent !important;
   color: #56646e !important;
 }
 .no-boarder .input-focus {
@@ -8871,8 +8867,6 @@ body.rtl .footer-widget {
   .page-sidebar.opened .page-sidebar-wrapper > ul > li.open > a,
   .page-sidebar.opened .page-sidebar-wrapper > ul > li > a:hover,
   .page-sidebar.opened .page-sidebar-wrapper > ul > li:hover > a {
-    background: #1b1e24;
-    /* border-left:4px solid  #0aa699;*/
     padding: 11.5px 31px;
     color: #fff;
   }
