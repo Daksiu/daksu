@@ -1303,6 +1303,24 @@ body.boxed-layout .footer-widget {
   transition: transform 0.3s ease;
   z-index: 6;
 }
+.empty{
+  margin-left: auto;
+  display: block;
+  margin-right: auto;
+}
+.empty-text h2{
+  margin:20px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7e8b9e !important;
+}
+.empty-text p{
+  color: #7e8b9e !important;
+  font-size: 16px;
+  font-family: 'Roboto';
+  font-weight: 200;
+}
+
 .page-content.condensed {
   margin-left: 50px;
 }
@@ -2003,6 +2021,9 @@ you can use the generic selector below, but it's slower:
   float: right;
   right: -15px;
   z-index: 9999;
+}
+.underline{
+  text-decoration: underline;
 }
 h1,
 h2,
