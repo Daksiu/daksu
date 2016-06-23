@@ -22,6 +22,9 @@
         <step id="archiveFileStep">
             <tasklet ref="archiveFileTasklet" />
         </step>
+        <listeners>
+	      <listener ref="importJobListener"/>
+	   </listeners>
     </job>
 
 </beans>

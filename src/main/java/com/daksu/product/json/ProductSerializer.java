@@ -17,6 +17,7 @@ public class ProductSerializer extends JsonSerializer<Product> {
 			throws IOException, JsonProcessingException {
 		jgen.writeStartObject();
 		jgen.writeStringField("id", product.getId().toHexString());
+		jgen.writeStringField("externalId", product.getExternalId());
 		jgen.writeStringField("name", product.getName());
 		jgen.writeStringField("description", product.getDescription());
 

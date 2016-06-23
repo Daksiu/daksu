@@ -10,6 +10,7 @@ import java.io.OutputStream;
 import java.nio.file.FileSystems;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
@@ -23,7 +24,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.daksu.batch.exception.DaksuImportException;
 import com.daksu.batch.service.BatchImportJobService;
-import com.daksu.product.repository.BatchImportProductRepository;
 import com.daksu.utils.SpringPropertiesUtil;
 import com.daksu.utils.UserContext;
 
@@ -58,13 +58,16 @@ public class BatchImportJobServiceImpl implements BatchImportJobService {
 			
 			String header = readCsvHeader(fileDir);
 			
+			String jobId = UUID.randomUUID().toString().replaceAll("-", "").toUpperCase();
+			
 			JobParameters params = new JobParametersBuilder()
 					.addString("inputFile", fileDir)
 					.addString("inputFileHeader", header)
 					.addString("companyId", userContext.getCompany().getCompanyId())
 					.addString("username", userContext.getUser().getUsername())
 					.addString("archiveDirectory", archiveDir)
-					.addDate("date", new Date()).toJobParameters();
+					.addDate("date", new Date())
+					.addString("jobId", jobId).toJobParameters();
 
 		
 			jobLauncher.run(job, params);

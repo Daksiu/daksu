@@ -68,8 +68,4 @@ public class ProductItemWriter implements ItemWriter<Product> {
 		this.username = username;
 	}
 	
-	
-	
-	
-	
 }

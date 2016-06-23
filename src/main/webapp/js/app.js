@@ -152,7 +152,7 @@ function EditController($scope, $routeParams, $location, NewsService) {
 };
 
 
-function UploadController($scope, FileUpload){
+function UploadController($scope, FileUpload, JobHistoryService){
     
     $scope.uploadFile = function(){
         var file = $scope.myFile;
@@ -161,6 +161,12 @@ function UploadController($scope, FileUpload){
         var uploadUrl = "rest/upload";
         FileUpload.uploadFileToUrl(file, uploadUrl);
         
+    };
+    
+    $scope.jobs = JobHistoryService.query();
+    
+    $scope.refreshJobHistory = function() {
+    	$scope.jobs = JobHistoryService.query();
     };
 };
 
@@ -255,8 +261,11 @@ services.factory('CompanyService', function($resource) {
 });
 
 services.factory('ProductService', function($resource) {
-	
 	return $resource('rest/product/:id', {id: '@id'});
+});
+
+services.factory('JobHistoryService', function($resource) {
+	return $resource('rest/job/:id', {id: '@id'});
 });
 
 services.service('FileUpload', ['$http', function ($http) {

@@ -78,8 +78,6 @@ public class ProductRepository {
 		}	
 	}
 
-	
-	
 	private MongoTemplate getMongoTemplate() {
 		return (MongoTemplate) context.getBean("mongoTemplate");
 	}

@@ -103,6 +103,9 @@
 	<bean id="userRepository" class="com.daksu.user.repositoty.UserRepository">
 	</bean>
 	
+	<bean id="importJobsRepository" class="com.daksu.batch.repository.ImportJobsRepository">
+	</bean>
+	
 	<bean id="userService" class="com.daksu.user.service.impl.UserServiceImpl">
 	</bean>
 
@@ -143,6 +146,10 @@
 	
 	<bean id="batchImportJobService" class="com.daksu.batch.service.impl.BatchImportJobServiceImpl"/>
 	
+	<bean id="batchJobRepository" class="com.daksu.batch.repository.BatchJobRepository">
+     	<constructor-arg ref="mongo"/>
+     </bean>
+	
 	 <!-- Reader bean for our simple CSV example -->
     <bean id="productReader" class="org.springframework.batch.item.file.FlatFileItemReader" scope="step">
 
@@ -177,6 +184,9 @@
     <bean id="productWriter" class="com.daksu.batch.writer.ProductItemWriter" scope="step">
    		 <property name="companyId" value="#{jobParameters['companyId']}" />
    		 <property name="username" value="#{jobParameters['username']}" />
+    </bean>
+    
+    <bean id="importJobListener" class="com.daksu.batch.listener.ImportJobListener">
     </bean>
     
     <bean id="productProcessor" class="com.daksu.batch.processor.ProductItemProcessor" />

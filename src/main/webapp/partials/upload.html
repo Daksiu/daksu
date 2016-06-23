@@ -9,6 +9,39 @@
 	</div>
 	
 	</br> </br> </br> </br>
-	<h3>Upload history</h3>
+	<div class="grid-body no-border">
+            <h3><span class="semi-bold">Import History</span></h3>
+            <button ng-click="refreshJobHistory()">Refresh</button>
+            <table class="table no-more-tables">
+				<thead>
+				    <tr>
+				        <th style="width:9%">ID</th>
+				        <th style="width:8%">Name</th>
+				        <th style="width:12%">Created Date</th>
+				        <th style="width:12%">Started Date</th>
+				        <th style="width:12%">Completed Date</th>
+				        <th style="width:8%">Created By</th>
+				        <th style="width:8%">Status</th>
+				    </tr>
+				</thead>
+				<tbody>
+				    <tr ng-repeat="jobStatus in jobs">
+				        <td class="v-align-middle">{{ jobStatus.jobId }}</td>
+				        <td class="v-align-middle"><span class="muted">{{ jobStatus.jobName }}</span>
+				        </td>
+				        <td><span class="muted">{{ jobStatus.jobCreatedDate }}</span>
+				        </td>
+				        <td><span class="muted">{{ jobStatus.jobStartedDate }}</span>
+				        </td>
+				        <td><span class="muted">{{ jobStatus.jobCompletedDate }}</span>
+				        </td>
+				        <td><span class="muted">{{ jobStatus.jobCreatedBy }}</span>
+				        </td>
+				        <td><span class="muted">{{ jobStatus.jobStatus }}</span>
+				        </td>
+				    </tr>
+				</tbody>
+			</table>     
+        </div>
 	
 </div>

@@ -15,9 +15,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +23,6 @@ import com.daksu.provisioner.bean.RegistrationBean;
 import com.daksu.provisioner.service.ProvisioningService;
 import com.daksu.rest.transfer.TokenTransfer;
 import com.daksu.security.filter.DaksuUserAuthenticationToken;
-import com.daksu.security.filter.TokenUtils;
 
 @Component
 @Path("/company")
