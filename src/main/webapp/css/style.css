@@ -86,7 +86,7 @@ body.hide-top-content-header .header-quick-nav {
   display: none;
 }
 body.hide-top-content-header .page-content .content {
-  padding-top: 25px;
+89  padding-top: 25px;
 }
 body.hide-top-content-header .page-sidebar.mini .page-sidebar-wrapper > ul {
   padding: 0;
@@ -1395,7 +1395,7 @@ body.boxed-layout .footer-widget {
 .page-content .content {
   padding-left: 16px;
   padding-right: 16px;
-  padding-top: 78px;
+  padding-top: 98px;
 }
 .inner-menu {
   display: inline-block;
@@ -2053,7 +2053,7 @@ h2 {
   line-height: 35px;
 }
 h3 {
-  line-height: 30px;
+  line-height: 6px;
 }
 h4 {
   line-height: 22px;
@@ -2313,10 +2313,10 @@ blockquote.pull-right small:after {
   background-color: #0090d9;
 }
 hr {
-  margin: 20px 0;
+  margin: 12px 0;
   border: 0;
   border-top: 1px solid #E0DFDF;
-  border-bottom: 1px solid #FEFEFE;
+  /*border-bottom: 1px solid #FEFEFE;*/
 }
 .icon-custom-2x {
   font-size: 0.9em;
@@ -2342,6 +2342,7 @@ hr {
   display: block;
   color: #666;
   margin: 0 0 10px;
+  margin-left: 14px;
   font-weight: 300;
   font-family: 'Roboto';
 }
@@ -2350,6 +2351,9 @@ hr {
   top: -5px;
   position: relative;
   width: 83%;
+}
+.supplier-title h4{
+  margin: 10px 0 18px 14px;
 }
 .page-title p {
   color: #63696d;
@@ -2372,6 +2376,32 @@ hr {
 }
 .page-title .actions {
   font-family: 'Arial';
+}
+.submenu-tools{
+  position: absolute;
+  top: 90px;
+  right: 20px;
+}
+.submenu-tools .display-tools{
+  padding: 4px 12px;
+  display: inline-block;
+  background-color: #e2e6ec;
+  border-radius: 20px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+.display-tools a{
+  color: #717e89;
+}
+.display-tools a.selected{
+  color: #0092ff;
+}
+i.grid-ico:after{
+  content: "";
+  border-left: 1px solid #c4c8ce;
+  font-size: 13px;
+  margin-right:8px;
+  margin-left: 12px;
 }
 .page-content .breadcrumb a,
 .page-content .breadcrumb i,
@@ -4809,7 +4839,7 @@ form legend,
   padding: 0px !important;
 }
 .grid.simple .grid-title {
-  padding: 14px 15px 7px 14px;
+  padding: 17px 15px 7px 14px;
   border-bottom: 1px solid #eee;
   color: #282323 !important;
   background-color: #ffffff;
@@ -4857,7 +4887,7 @@ form legend,
 }
 .grid.simple .grid-body.no-border {
   border: 0px;
-  padding-top: 10px;
+  padding-top: 0px;
 }
 .grid.simple .grid-body h4 {
   color: #282323;
@@ -4917,7 +4947,7 @@ form legend,
   display: inline-block;
   font-weight: 400;
   margin: 0;
-  padding: 0;
+  padding-bottom:2px;
   margin-bottom: 7px;
   white-space: nowrap;
   overflow: hidden;
@@ -4933,7 +4963,6 @@ span.table-count{
   color: #b5babd!important;
   font-size: 12px;
   position: absolute;
-  top: 14px;
 }
 .grid-title.descriptive {
   padding-left: 23px !important;
@@ -7047,11 +7076,15 @@ table tr {
 }
 table tr td:first-child:before {
   content: counter(rowNumber);
-  position:absolute;
+  float: left;
   padding-top:12px;
   padding-right: 12px;
   color:#6a7883;
-  font-family: 'Consolas'
+  font-family: 'Consolas';
+
+}
+.table{
+  margin-bottom: 0;
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
   vertical-align: middle;
@@ -7081,10 +7114,15 @@ table tr td:first-child:before {
   vertical-align: top;
   padding: 4px 12px !important;
   color: #576475;
-  font-size: 12px;
+  font-size: 11px;
 }
 .table td.no-border {
   border: none;
+}
+.spreadsheet-ico{
+  margin-right: 6px;
+  margin-left: 4px;
+  color: #cbced6;
 }
 .table td:first-child {
   -webkit-border-radius: 3px;
@@ -7200,7 +7238,7 @@ th {
 [14. Datatables]
 */
 .checkbox input[type=checkbox]{
-  margin-left: 20px;
+  margin-left: -2px;
 }
 .dataTables_wrapper .pagination ul {
   box-shadow: none;
