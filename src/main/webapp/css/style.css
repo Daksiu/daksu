@@ -1313,6 +1313,7 @@ body.boxed-layout .footer-widget {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #7e8b9e !important;
+  font-weight: normal;
 }
 .empty-text p{
   color: #7e8b9e !important;
@@ -1320,7 +1321,16 @@ body.boxed-layout .footer-widget {
   font-family: 'Roboto';
   font-weight: 200;
 }
-
+.empty-text>.empty-btn{
+  font-size: 14px;
+  text-transform: none;
+  padding: 14px 20px;
+  margin-bottom: 28px;
+}
+.empty-text>span.manually-txt{
+  font-size: 12px;
+  color: #a8b2b9;
+}
 .page-content.condensed {
   margin-left: 50px;
 }
@@ -2023,7 +2033,7 @@ you can use the generic selector below, but it's slower:
   z-index: 9999;
 }
 .underline{
-  text-decoration: underline;
+  cursor: pointer;
 }
 h1,
 h2,
