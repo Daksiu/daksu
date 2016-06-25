@@ -6,7 +6,7 @@ Generated From LESS
 
 1. Layouts
 2. Icons
-3. Horizontal Menu
+93. Horizontal Menu
 4. Typography
 5. Misc
 6. Form Elements
@@ -1393,9 +1393,9 @@ body.boxed-layout .footer-widget {
   font-size: 10px;
 }
 .page-content .content {
-  padding-left: 26px;
-  padding-right: 26px;
-  padding-top: 83px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 78px;
 }
 .inner-menu {
   display: inline-block;
@@ -3451,19 +3451,13 @@ input[type="color"]:focus,
   box-shadow: none;
 }
 input[type="radio"],
-input[type="checkbox"] {
-  margin: 4px 0 0;
-  margin-top: 1px;
-  line-height: normal;
-  cursor: pointer;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 select,
 input[type="file"] {
   height: 34px !important;
   line-height: 30px;
+}
+ input[type="checkbox"]:focus{
+  outline:0;
 }
 select {
   width: 220px;
@@ -3491,8 +3485,7 @@ select[size] {
 }
 select:focus,
 input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
+input[type="radio"]:focus,{
   outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -3583,11 +3576,6 @@ textarea[class*="span"] {
   padding: 22px 8px !important;
 }
 .radio,
-.checkbox {
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-left: 0px;
-}
 .radio label {
   display: inline-block;
   cursor: pointer;
@@ -3694,112 +3682,7 @@ textarea[class*="span"] {
 .radio input[type=radio]:checked + label:before {
   border: 1px solid #8e9095;
 }
-.checkbox input[type=radio][disabled] + label:after {
-  background-color: #eceff3;
-}
-.checkbox label {
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  padding-left: 25px;
-  margin-right: 15px;
-  font-size: 13px;
-  margin-bottom: 6px;
-  color: #777a80;
-  transition: border 0.2s linear 0s,color 0.2s linear 0s;
-  margin-bottom: 10px;
-  direction: ltr;
-}
-.checkbox label:before {
-  content: "";
-  display: inline-block;
-  width: 17px;
-  height: 17px;
-  margin-right: 10px;
-  position: absolute;
-  left: 0px;
-  top: 1.4px;
-  background-color: #ffffff;
-  border: 1px solid #c2c6cb;
-  border-radius: 3px;
-  transition: border 0.2s linear 0s,color 0.2s linear 0s;
-}
-.checkbox label::after {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  left: 3.2px;
-  top: 0px;
-  font-size: 11px;
-  transition: border 0.2s linear 0s,color 0.2s linear 0s;
-}
-.checkbox label:after {
-  border-radius: 3px;
-}
-.checkbox input[type=checkbox] {
-  display: none;
-}
-.checkbox.checkbox-circle label:after {
-  border-radius: 99px;
-}
-.checkbox.checkbox-circle label:before {
-  border-radius: 99px;
-}
-.checkbox input[type=checkbox]:checked + label {
-  color: #4d5056;
-}
-.checkbox input[type=checkbox]:checked + label::after {
-  font-family: 'FontAwesome';
-  content: "\F00C";
-}
-.checkbox input[type=checkbox][disabled] + label {
-  opacity: 0.65;
-}
-.checkbox input[type=checkbox][disabled] + label:before {
-  background-color: #eceff3;
-}
-.checkbox.check-success input[type=checkbox]:checked + label:before {
-  background-color: #0090d9;
-  border: 1px solid #0090d9;
-}
-.checkbox.check-success input[type=checkbox]:checked + label::after {
-  color: #ffffff;
-}
-.checkbox.check-primary input[type=checkbox]:checked + label:before {
-  background-color: #0aa699;
-  border: 1px solid #0aa699;
-}
-.checkbox.check-primary input[type=checkbox]:checked + label::after {
-  color: #ffffff;
-}
-.checkbox.check-info input[type=checkbox]:checked + label:before {
-  background-color: #1f3853;
-  border: 1px solid #1f3853;
-}
-.checkbox.check-info input[type=checkbox]:checked + label::after {
-  color: #ffffff;
-}
-.checkbox.check-warning input[type=checkbox]:checked + label:before {
-  background-color: #fbb05e;
-  border: 1px solid #fbb05e;
-}
-.checkbox.check-warning input[type=checkbox]:checked + label::after {
-  color: #ffffff;
-}
-.checkbox.check-danger input[type=checkbox]:checked + label:before {
-  background-color: #f35958;
-  border: 1px solid #f35958;
-}
-.checkbox.check-danger input[type=checkbox]:checked + label::after {
-  color: #ffffff;
-}
-table td .checkbox label {
-  padding-left: 0px;
-}
-table th .checkbox label {
-  padding-left: 0px;
-}
+
 table.fc-border-separate {
   margin-top: 20px;
 }
@@ -3822,12 +3705,6 @@ table.fc-border-separate {
   font-size: 18px;
   color: #97a3b3;
   transition: border 0.2s linear 0s,color 0.2s linear 0s;
-}
-.star input[type=checkbox] {
-  display: none;
-}
-.star input[type=checkbox]:checked + label:before {
-  color: #ffd200;
 }
 .wysihtml5-toolbar li {
   padding-left: 0px;
@@ -3915,12 +3792,10 @@ form legend,
 .form-view legend {
   margin-bottom: 15px !important;
 }
-.controls > .radio .checker,
-.controls > .checkbox .checker {
+.controls > .radio .checker,{
   margin-right: 2px !important;
 }
-.controls > .radio,
-.controls > .checkbox {
+.controls > .radio,{
   display: inline-block;
   padding: 0 !important;
   margin: 0 !important;
@@ -3928,7 +3803,7 @@ form legend,
   margin-right: 15px !important;
 }
 .controls > .radio.line,
-.controls > .checkbox.line {
+.controls >{
   display: block;
   padding: 0 !important;
   margin: 0 !important;
@@ -4934,7 +4809,7 @@ form legend,
   padding: 0px !important;
 }
 .grid.simple .grid-title {
-  padding: 14px 15px 7px 15px;
+  padding: 14px 15px 7px 14px;
   border-bottom: 1px solid #eee;
   color: #282323 !important;
   background-color: #ffffff;
@@ -4969,9 +4844,9 @@ form legend,
 }
 .grid.simple .grid-body {
   background-color: #ffffff;
-  padding: 26px;
+  padding: 26px 14px;
   border: 1px solid #dddddd;
-  color: #6f7b8a;
+  color: #000;
 }
 .grid.simple .grid-body.no-padding {
   padding: 0px;
@@ -4982,7 +4857,7 @@ form legend,
 }
 .grid.simple .grid-body.no-border {
   border: 0px;
-  padding-top: 1px;
+  padding-top: 10px;
 }
 .grid.simple .grid-body h4 {
   color: #282323;
@@ -5038,22 +4913,27 @@ form legend,
   margin-bottom: 15px;
   border-bottom: 1px solid #eee;
 }
-.grid-title h4 {
+.grid-title h5 {
   display: inline-block;
-  font-size: 16px;
   font-weight: 400;
   margin: 0;
   padding: 0;
   margin-bottom: 7px;
-  width: 60%;
   white-space: nowrap;
   overflow: hidden;
+  margin-right: 20px;
   text-overflow: ellipsis;
 }
 .grid-title h4 i {
   font-size: 14px;
   margin-right: 5px;
   color: #666;
+}
+span.table-count{
+  color: #b5babd!important;
+  font-size: 12px;
+  position: absolute;
+  top: 14px;
 }
 .grid-title.descriptive {
   padding-left: 23px !important;
@@ -7161,6 +7041,21 @@ code:hover {
 /*------------------------------------------------------------------
 [13. Tables]
 */
+
+table tr {
+    counter-increment: rowNumber;
+}
+table tr td:first-child:before {
+  content: counter(rowNumber);
+  position:absolute;
+  padding-top:12px;
+  padding-right: 12px;
+  color:#6a7883;
+  font-family: 'Consolas'
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+  vertical-align: middle;
+}
 .table > thead > tr > th {
   border-bottom: 0px;
 }
@@ -7168,7 +7063,6 @@ code:hover {
   border-top: 1px solid #e8edf1;
   padding: 10px 12px;
   font-size: 12px;
-  text-transform: uppercase;
 }
 .table th.medium-cell {
   width: 112px;
@@ -7185,9 +7079,9 @@ code:hover {
 .table td {
   border-top: 1px solid #e8edf1;
   vertical-align: top;
-  padding: 10px 12px !important;
+  padding: 4px 12px !important;
   color: #576475;
-  font-size: 13px;
+  font-size: 12px;
 }
 .table td.no-border {
   border: none;
@@ -7206,13 +7100,10 @@ code:hover {
   margin-bottom: 0px;
 }
 .table td .muted {
-  color: #95989a;
+  color: #000;
 }
 .table td.clickable {
   cursor: pointer;
-}
-.table .checkbox {
-  margin-left: 3px;
 }
 .table .star {
   margin-left: 3px;
@@ -7226,13 +7117,7 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  padding: 12px;
-}
-.table th input[type="radio"],
-input[type="checkbox"],
-.table td input[type="radio"],
-input[type="checkbox"] {
-  margin-top: -2px;
+  padding: 0px 12px;
 }
 .table td.small-cell,
 .table th.small-cell {
@@ -7255,20 +7140,25 @@ input[type="checkbox"] {
 .table-condensed > tfoot > tr > td {
   padding: 9px;
 }
-.table-condensed th .checkbox {
-  margin-left: 4px;
-}
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  border-top: 1px solid #e8edf1;
+  border:0;
+}
+.table-striped{
+  border: 1px solid #dfe2ea;
+}
+.table-striped thead{
+  border: 1px solid #dfe2ea;
 }
 .table-striped tbody > tr:nth-child(2n+1) > td,
 .table-striped tbody > tr:nth-child(2n+1) > th {
-  background-color: #ecf0f2;
-  border: none;
+  background-color:#f6f8fd;
+  border-right: 1px solid #dfe2ea;
+  border-left: 1px solid #dfe2ea;
 }
 .table-striped tbody > tr > td {
-  border: 0px;
+  border-left: 1px solid #dfe2ea;
+  border-right:   1px solid #dfe2ea;;
 }
 .table-hover tbody tr:hover > td,
 .table-hover tbody tr:hover > th {
@@ -7309,6 +7199,9 @@ input[type="checkbox"] {
 /*------------------------------------------------------------------
 [14. Datatables]
 */
+.checkbox input[type=checkbox]{
+  margin-left: 20px;
+}
 .dataTables_wrapper .pagination ul {
   box-shadow: none;
   font-size: 12px;
@@ -8492,10 +8385,6 @@ body.rtl .footer-widget {
   .table td.small-cell,
   .table th.small-cell {
     width: 42px;
-  }
-  /** Controls **/
-  .checkbox label:before {
-    top: 0.5px;
   }
   /** Tiles **/
   .tiles.margin-reset {
@@ -9976,9 +9865,6 @@ body.rtl .footer-widget {
     position: relative;
     opacity: 0.8;
     background-size: 114px 29px;
-  }
-  .checkbox label::after {
-    top: 1.5px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
