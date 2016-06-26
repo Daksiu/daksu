@@ -2347,6 +2347,49 @@ hr {
   font-weight: 300;
   font-family: 'Roboto';
 }
+.submenu-tools{
+  position: absolute;
+  top: 90px;
+  right: 20px;
+}
+.submenu-tools .display-tools{
+  padding: 4px 12px;
+  display: inline-block;
+  background-color: #e2e6ec;
+  border-radius: 20px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+.display-tools a{
+  color: #717e89;
+}
+.display-tools a.selected{
+  color: #0092ff;
+}
+i.grid-ico:after{
+  content: "";
+  border-left: 1px solid #c4c8ce;
+  font-size: 13px;
+  margin-right:8px;
+  margin-left: 12px;
+}
+
+.submenu-tools a.import-btn{
+  font-weight: 300;
+  font-family: 'Roboto';
+  font-size: 14px;
+  color:#969ba5;
+}
+.submenu-tools a.import-btn:hover{
+
+  color:black;
+}
+.submenu-tools a>i.fa-file-excel-o{
+  position: absolute;
+  left: -24px;
+  top:4px;
+  font-size: 20px;
+}
 .page-title h3 {
   display: inline-block;
   top: -5px;
@@ -2377,19 +2420,6 @@ hr {
 }
 .page-title .actions {
   font-family: 'Arial';
-}
-.submenu-tools{
-  position: absolute;
-  top: 90px;
-  right: 20px;
-}
-.submenu-tools .display-tools{
-  padding: 4px 12px;
-  display: inline-block;
-  background-color: #e2e6ec;
-  border-radius: 20px;
-  margin-left: 20px;
-  font-size: 14px;
 }
 .page-content .breadcrumb a,
 .page-content .breadcrumb i,
