@@ -2398,6 +2398,7 @@ i.grid-ico:after{
 }
 .supplier-title h4{
   margin: 14px 0 18px 14px;
+  color:#aeb4bd;
 }
 .page-title p {
   color: #63696d;
@@ -5134,6 +5135,12 @@ span.table-count{
 .sortable-box-placeholder * {
   visibility: hidden;
 }
+.grid.simple .grid-title .tools ul.dropdown-menu{
+  left:-124px;
+}
+.grid.simple .grid-title .tools ul.dropdown-menu a{
+  background-image: none!important;
+}
 .grid.simple .grid-title .tools a,
 .grid.solid .grid-title .tools a {
   position: relative;
@@ -7095,7 +7102,7 @@ table tr {
 table tr td:first-child:before {
   content: counter(rowNumber);
   float: left;
-  padding-top: 6px;
+  padding-top:  3px;
   padding-right: 12px;
   color:#6a7883;
   font-family: 'Consolas';
@@ -7253,8 +7260,8 @@ th {
   border-radius: 0px;
 }
 .img-row{
+  padding-top: 2px;
   display: flex;
-  padding-top:4px;
 }
 .img-row a{
   color: #6a7883;
