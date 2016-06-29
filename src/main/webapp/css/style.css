@@ -5141,6 +5141,9 @@ span.table-count{
 .grid.simple .grid-title .tools ul.dropdown-menu a{
   background-image: none!important;
 }
+.grid.simple .grid-title .tools ul.dropdown-menu a:hover{
+  background-color: #eff2f4;
+}
 .grid.simple .grid-title .tools a,
 .grid.solid .grid-title .tools a {
   position: relative;
