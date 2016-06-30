@@ -2351,6 +2351,12 @@ hr {
   position: absolute;
   top: 90px;
   right: 20px;
+  /*margin-left: 20px;
+    border: 1px solid #e2e6ec;
+    padding: 8px 12px;
+    background-color: #fafbfd;
+    color: #a3acb9;
+    border-radius: 4px;*/
 }
 .submenu-tools .display-tools{
   padding: 4px 12px;
@@ -2397,8 +2403,9 @@ i.grid-ico:after{
   width: 83%;
 }
 .supplier-title h4{
-  margin: 14px 0 18px 14px;
+  margin: 14px 0 34px 14px;
   color:#aeb4bd;
+  display: inline-block;
 }
 .page-title p {
   color: #63696d;
@@ -4856,15 +4863,17 @@ form legend,
 }
 .grid.simple {
   padding: 0px !important;
+  margin-bottom: 2px;
 }
 .grid.simple .grid-title {
-  padding: 17px 15px 7px 14px;
+  padding: 17px 15px 7px 10px;
   border-bottom: 1px solid #eee;
   color: #282323 !important;
   background-color: #ffffff;
   margin-bottom: 0px;
   border: 1px solid #dddddd;
   border-bottom: 0px;
+  box-shadow: 0 1px 2px #e8e8e8;
 }
 .grid.simple .grid-title > .actions > .btn > i {
   color: #ffffff !important;
@@ -4876,6 +4885,7 @@ form legend,
 .grid.simple .grid-title.no-border {
   border: 0px;
   border-bottom: 0px;
+  border-left:4px solid      #728cda;
 }
 .grid.simple .form-actions {
   margin-right: -26px !important;
@@ -5134,6 +5144,11 @@ span.table-count{
 }
 .sortable-box-placeholder * {
   visibility: hidden;
+}
+.table-icons{
+  background-image: none !important;
+  font-size: 16px;
+  color:#a8b1bd;
 }
 .grid.simple .grid-title .tools ul.dropdown-menu{
   left:-124px;
