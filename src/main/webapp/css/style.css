@@ -4866,7 +4866,7 @@ form legend,
   margin-bottom: 2px;
 }
 .grid.simple .grid-title {
-  padding: 17px 15px 7px 10px;
+  padding: 19px 15px 7px 10px;
   border-bottom: 1px solid #eee;
   color: #282323 !important;
   background-color: #ffffff;
@@ -4885,7 +4885,7 @@ form legend,
 .grid.simple .grid-title.no-border {
   border: 0px;
   border-bottom: 0px;
-  border-left:4px solid      #728cda;
+  border-left:4px solid #69b1ff;
 }
 .grid.simple .form-actions {
   margin-right: -26px !important;
@@ -5195,8 +5195,8 @@ span.table-count{
 .grid.simple .grid-title .tools > a.collapse,
 .grid.solid .grid-title .tools > a.collapse {
   background-position: -95px -40px;
-  width: 9px;
-  height: 7px;
+  width: 10px;
+  height: 6px;
   top: -5px;
 }
 /*------------------------------------------------------------------
