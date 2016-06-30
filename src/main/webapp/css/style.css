@@ -2390,10 +2390,9 @@ i.grid-ico:after{
 
   color:black;
 }
-.submenu-tools a>i.fa-file-excel-o{
-  position: absolute;
-  left: -24px;
-  top:4px;
+.submenu-tools a>i.record-option{
+  padding-right: 4px;
+  margin-left: 20px;
   font-size: 20px;
 }
 .page-title h3 {
@@ -2403,8 +2402,10 @@ i.grid-ico:after{
   width: 83%;
 }
 .supplier-title h4{
+  color: #6a7883;
   margin: 14px 0 34px 14px;
-  color:#aeb4bd;
+  letter-spacing: 0.5px;
+  font-weight: 500;
   display: inline-block;
 }
 .page-title p {
@@ -4976,7 +4977,7 @@ form legend,
   display: inline-block;
   font-weight: 400;
   margin: 0;
-  padding-bottom:2px;
+  padding-bottom:0;
   margin-bottom: 7px;
   white-space: nowrap;
   overflow: hidden;
@@ -4989,8 +4990,10 @@ form legend,
   color: #666;
 }
 span.table-count{
-  color: #b5babd!important;
-  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  color: #6a7883!important;
+  font-size: 11px;
   position: absolute;
 }
 .grid-title.descriptive {
