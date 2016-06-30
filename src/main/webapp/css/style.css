@@ -4915,9 +4915,8 @@ form legend,
   padding: 0 26px;
   padding-top: 10px;
 }
-.grid.simple .grid-body.no-border {
+.grid.simple .grid-body.no-border {padding-top:14px;
   border: 0px;
-  padding-top: 0px;
 }
 .grid.simple .grid-body h4 {
   color: #282323;
