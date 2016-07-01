@@ -37,6 +37,12 @@
     Webarch.prototype.initTooltipPlugin = function() {
         $.fn.tooltip && $('[data-toggle="tooltip"]').tooltip();
     }
+    // Tooltip Image 
+    $('a[data-toggle="tooltip"]').tooltip({
+    animated: 'fade',
+    placement:'Right',
+    html: true
+    });
     // Popover
     Webarch.prototype.initPopoverPlugin = function() {
         $.fn.popover && $('[data-toggle="popover"]').popover();
@@ -558,7 +564,6 @@ $(document).ready(function () {
     };    
 
 })(jQuery);
-
 
 $(function() {
     'use strict';
