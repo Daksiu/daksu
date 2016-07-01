@@ -150,6 +150,12 @@ body.modal-open .page-content {
 body.modal-open .chat-window-wrapper {
   display: none;
 }
+body.modal-open .modal-content{
+  border-color:#d8dadf;
+  border-radius:0;
+  box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.09) !important;
+}
+
 body.boxed-layout .footer-widget {
   display: none;
 }
@@ -1589,6 +1595,9 @@ body.boxed-layout .footer-widget {
   padding: 0 31px;
   animation-duration: 0.3s !important;
 }
+.browse-file{
+  margin:100px 0;
+}
 .status-widget .title {
   color: #ffffff;
   font-size: 13px;
@@ -2475,6 +2484,30 @@ i.grid-ico:after{
 */
 span.iconset {
   display: block;
+}
+.np-left{
+  margin-left:0 !important;
+}
+.import{
+  width: 46px;
+  height: 42px;
+  margin-top: 30px;
+  margin-left: 60px;
+  background-image: url("../img/import-services.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-size: 14em;
+}
+.import.dropbox{
+  background-position:-139px;
+}
+.import.google{
+  background-position:-2px;
+}
+.import.box{
+  background-position: -37px;
+  background-size: 10em;
+  width: 52px;
 }
 .iconset {
   background: url("../img/icon/top-tray.png") no-repeat;
@@ -5610,14 +5643,16 @@ span.table-count{
 .modal-header {
   text-align: center;
 }
+.modal-backdrop{
+  background:#f4f4f8;
+  opacity: 0.8 !important;
+}
 .modal-header p {
   color: #8b91a0;
 }
 .modal-body {
-  background-color: #e5e9ec;
-}
-.modal-content {
-  border: 0;
+  background-color: white;
+  border:0px !important;
 }
 .modal-footer {
   border-top: none;
