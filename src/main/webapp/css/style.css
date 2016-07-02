@@ -2536,6 +2536,8 @@ span.iconset {
 .dropzone.dragover{
   border: 2px dashed #0092ff;
   color: #0092ff;
+  
+  background-color:#fbfcff;
 }
 .np-left{
   margin-left:0 !important;
