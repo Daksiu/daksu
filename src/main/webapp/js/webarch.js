@@ -21,6 +21,21 @@
         this.color_warning="#f7cf5e";
         this.color_info="#3b4751";
     }
+    //Drop file
+    (function(){
+            var dropzone = document.getElementById('zone');
+            dropzone.ondrop = function(e){
+                e.preventDefault();
+                this.className = 'dropzone';
+            }
+            dropzone.ondragover = function(){
+                this.className =  'dropzone dragover';
+                return false;
+            }
+            dropzone.ondragleave = function (){
+                this.className = 'dropzone';
+            }
+        }());
     // Set environment vars
     Webarch.prototype.initHorizontalMenu = function() {
         $('.horizontal-menu .bar-inner > ul > li').on('click', function () {
@@ -157,6 +172,7 @@
             }
         });
     }
+
     // Sidebar
     Webarch.prototype.initSideBar = function(){
         var sidebar = $('.page-sidebar');
@@ -240,6 +256,7 @@
             $('body').addClass('open-menu-right');
         }        
     }
+
     // Util Functions
     Webarch.prototype.initUtil = function(){
         $('[data-height-adjust="true"]').each(function () {
@@ -400,6 +417,7 @@
 
         $('.validate').validate();
     }
+
     // Block UI
     Webarch.prototype.blockUI = function(el){
         $(el).block({
