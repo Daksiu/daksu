@@ -433,7 +433,7 @@ body.boxed-layout .footer-widget {
   display: inline-block;
   float: left;
 }
-.header .chat-toggler .user-details .username span.company{
+.header .username span.company{
   font-size: 14px;
   color:#6a7883;
   font-weight: 5000; 
@@ -465,7 +465,7 @@ body.boxed-layout .footer-widget {
 .header .quick-section {
   margin-left: 0;
   margin-top: 16px;
-  margin-right: 10px;
+  margin-right: 14px;
   display: inline-block;
   float: left;
   direction: ltr;
@@ -476,6 +476,10 @@ body.boxed-layout .footer-widget {
   margin-left: 25px !important;
   top: -4.5px;
   position: relative;
+}
+.section-title{
+margin-top: 0;
+color:#6a7883;
 }
 .header .popover-title {
   border-bottom: 0px;
@@ -1400,9 +1404,9 @@ body.boxed-layout .footer-widget {
   font-size: 10px;
 }
 .page-content .content {
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 78px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 120px;
 }
 .inner-menu {
   display: inline-block;
@@ -2372,10 +2376,8 @@ hr {
     border-radius: 4px;*/
 }
 .submenu-tools .display-tools{
-  padding: 4px 12px;
   display: inline-block;
-  background-color: #e2e6ec;
-  border-radius: 20px;
+
   margin-left: 20px;
   font-size: 14px;
 }
@@ -2489,12 +2491,8 @@ i.grid-ico:after{
 span.iconset {
   display: block;
 }
-.info-text{
-  font-size: 11px;
-  color:#bec3d0;
-  font-family:'Roboto';
-  margin-top: 14px;
-  display: block;
+.modal-row>img{
+  display: none!important;
 }
 .modal-row{
   margin-bottom:20px;
@@ -2502,9 +2500,8 @@ span.iconset {
 }
 .dropzone img{
   margin-left: auto;
-  width: 150px;
+  width: 80%;
   opacity: 0.6;
-  margin-top: 40px;
   margin-right: auto;
   margin-bottom: 14px;
   -moz-user-select: none;
@@ -2513,6 +2510,7 @@ span.iconset {
   border: 2px dashed #bec3d0;
   height: 100%;
   width: 100%;
+  padding: 42px 0;
   font-family: 'Roboto';
   font-size:14px;
   font-weight: 400;
@@ -2521,13 +2519,16 @@ span.iconset {
   vertical-align: middle;
 
 }
+.dropzone h2{
+  color:#a0b2c3;
+}
 .dropzone p{
   font-family: 'Roboto';
   font-size: 14px;
   font-weight: 300;
 }
 .dropzone a{
-  color:#bec3d0;
+  color:#949aa9;
   text-decoration: underline;
 }
 .dropzone a:hover{
@@ -2536,7 +2537,7 @@ span.iconset {
 .dropzone.dragover{
   border: 2px dashed #0092ff;
   color: #0092ff;
-  
+  opacity:1;
   background-color:#fbfcff;
 }
 .np-left{
@@ -2631,7 +2632,8 @@ span.iconset {
   background-position: -288px -7px;
   width: 18px;
   height: 15px;
-  margin-left: 14px;
+  margin-left: -54px;
+  opacity: 0.3;
 }
 .iconset.top-menu-toggle-white {
   background-position: -315px -7px;
