@@ -9,7 +9,7 @@ Generated From LESS
 93. Horizontal Menu
 4. Typography
 5. Misc
-6. Form Elements
+6. Form Element
 7. Portlets
 8. Message and Notification
 9. Tiles
@@ -1405,8 +1405,8 @@ color:#6a7883;
 }
 .page-content .content {
   padding-left: 20px;
+  padding-top: 60px;
   padding-right: 20px;
-  padding-top: 120px;
 }
 .inner-menu {
   display: inline-block;
@@ -2365,15 +2365,7 @@ hr {
   font-family: 'Roboto';
 }
 .submenu-tools{
-  position: absolute;
-  top: 90px;
-  right: 20px;
-  /*margin-left: 20px;
-    border: 1px solid #e2e6ec;
-    padding: 8px 12px;
-    background-color: #fafbfd;
-    color: #a3acb9;
-    border-radius: 4px;*/
+  margin-top: 34px;
 }
 .submenu-tools .display-tools{
   display: inline-block;
@@ -2395,9 +2387,10 @@ i.grid-ico:after{
   margin-left: 12px;
 }
 
-.submenu-tools a.import-btn{
+a.import-btn{
   font-weight: 300;
   font-family: 'Roboto';
+  margin-left: 20px;
   font-size: 14px;
   color:#969ba5;
 }
@@ -2405,9 +2398,8 @@ i.grid-ico:after{
 
   color:black;
 }
-.submenu-tools a>i.record-option{
+a.import-btn i.fa{
   padding-right: 4px;
-  margin-left: 20px;
   font-size: 20px;
 }
 .page-title h3 {
@@ -2416,11 +2408,11 @@ i.grid-ico:after{
   position: relative;
   width: 83%;
 }
-.supplier-title h4{
+.supplier-title h3{
   color: #6a7883;
-  margin: 14px 0 34px 14px;
+  margin:38px 0;
   letter-spacing: 0.5px;
-  font-weight: 500;
+  font-weight: 300;
   display: inline-block;
 }
 .page-title p {
@@ -2632,7 +2624,7 @@ span.iconset {
   background-position: -288px -7px;
   width: 18px;
   height: 15px;
-  margin-left: -54px;
+  margin-left: 14px;
   opacity: 0.3;
 }
 .iconset.top-menu-toggle-white {
@@ -3542,7 +3534,7 @@ input[type="color"] {
   font-size: 13px;
   font-weight: normal;
   vertical-align: top;
-  background-color: #ffffff;
+  background-color: transparent;
   min-height: 37px;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
@@ -3555,6 +3547,10 @@ input[type="color"] {
   border-radius: 2px;
   border: 1px solid #e5e9ec;
   transition: background 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+.header .search{
+  border:1px solid #d4d5d6;
+  border-radius: 30px; 
 }
 input {
   border: 1px solid #cecece;
@@ -3593,7 +3589,6 @@ input[type="tel"]:focus,
 input[type="color"]:focus,
 .m-uneditable-input:focus {
   border-color: #5ce4c9;
-  background-color: white;
   outline: 0 !important;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -4398,7 +4393,7 @@ form legend,
 }
 .input-prepend.inside .add-on:first-child,
 .input-prepend .btn:first-child {
-  background-color: #ffffff;
+  background-color: transparent;
   border: 1px solid #e5e9ec;
   position: relative;
   left: 3px;
